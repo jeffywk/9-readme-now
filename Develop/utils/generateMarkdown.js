@@ -17,4 +17,32 @@ function generateMarkdown(data) {
 `;
 }
 
-module.exports = generateMarkdown;
+module.exports = generateMarkdown => {
+  const { } = generateMarkdown;
+
+  return `
+  # ${questions(title)}
+
+  ## Description 
+  ${questions(description)}
+
+  ## Installation
+  ${questions(installation)}
+
+  ## Usage
+  ${questions(usage)}
+
+  ## License
+  ${questions(license)}
+
+  ## Contributing
+  ${questions(guidelines)}
+
+  ## Tests
+  ${questions(tests)}
+
+  ## Questions
+  Email me with questions at ${questions(email)}
+  See more at github.com/${questions(username)}/
+  `
+};
