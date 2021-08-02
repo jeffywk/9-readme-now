@@ -53,30 +53,36 @@ const questions = () => {
                 if (descriptionInput) {
                     return true;
                 } else {
-                    console.log('Please enter a description for your project!');
+                    console.log('Enter a description for your project!');
                     return false;
                 }
             }
         },
         {
+            type: 'checkbox',
+            name: 'licenses',
+            message: 'What sort of license would you like for your project?',
+            choices: ['GNU GPLv3', 'MIT', 'Mozilla Public License 2.0', 'Apache License 2.0', 'Unlicense', 'No license']
+        },
+        {
             type: 'input',
             name: 'installation',
-            message: 'Provide installation instructions:',
+            message: 'Provide installation instructions:'
         },
         {
             type: 'input',
             name: 'usage',
-            message: 'Provide usage information:',
+            message: 'Provide usage information:'
         },
         {
             type: 'input',
             name: 'guidelines',
-            message: 'Provide contribution guidelines:',
+            message: 'Provide contribution guidelines:'
         },
         {
             type: 'input',
             name: 'tests',
-            message: 'Provide testing instructions:',
+            message: 'Provide testing instructions:'
         }
     ]);
 };
