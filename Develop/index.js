@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
-// const { writeToFile } = require('./utils/generateMarkdown.js')
+// const { writeToFile, generateMarkdown } = require('./utils/generateMarkdown.js')
 const inquirer = require('inquirer');
-generateMarkdown = require('./utils/generateMarkdown');
+const generateMarkdown = require('./src/generateMarkdown')
 
 // Create an array of questions for user input
 const questions = () => {
@@ -84,14 +84,24 @@ const questions = () => {
             name: 'tests',
             message: 'Provide testing instructions:'
         }
-    ]);
+    ])
+    .then(projectData => {
+        readmeData.projects.push(projectData);
+    });
 };
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
-function init() {}
+function generateMarkdown() {}
 
 // Function call to initialize app
-init();
+questions()
+    .then(generateMarkdown);
+
+fs.writeToFile('README.md', generateMarkdown(name, github), err => {
+    if (err) throw err;
+    
+    console.log('README complete! Check out README.md to see the output!');
+    });
