@@ -21,6 +21,32 @@ const questions = () => {
         },
         {
             type: 'input',
+            name: 'username',
+            message: 'What is your Github username? (Required)',
+            validate: usernameInput => {
+                if (usernameInput) {
+                    return true;
+                } else {
+                    console.log('Enter your Github username!');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'Please enter your email address. (Required)',
+            validate: emailInput => {
+                if (emailInput) {
+                    return true;
+                } else {
+                    console.log('Enter your email address!');
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'input',
             name: 'description',
             message: 'Please provide a description for your project. (Required)',
             validate: descriptionInput => {
@@ -33,23 +59,23 @@ const questions = () => {
             }
         },
         {
-            type:
-            name:
+            type: 'input',
+            name: 'installation',
             message:
         },
         {
-            type:
-            name:
+            type: 'input',
+            name: 'usage',
             message:
         },
         {
-            type:
-            name:
+            type: 'input',
+            name: 'guidelines',
             message:
         },
         {
-            type:
-            name:
+            type: 'input',
+            name: 'tests',
             message:
         }
     ]);
