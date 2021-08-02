@@ -61,22 +61,22 @@ const questions = () => {
         {
             type: 'input',
             name: 'installation',
-            message:
+            message: 'Provide installation instructions:',
         },
         {
             type: 'input',
             name: 'usage',
-            message:
+            message: 'Provide usage information:',
         },
         {
             type: 'input',
             name: 'guidelines',
-            message:
+            message: 'Provide contribution guidelines:',
         },
         {
             type: 'input',
             name: 'tests',
-            message:
+            message: 'Provide testing instructions:',
         }
     ]);
 };
