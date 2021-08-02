@@ -19,8 +19,41 @@ const questions = () => {
                 }
             }
         },
-    ])
-}
+        {
+            type: 'input',
+            name: 'description',
+            message: 'Please provide a description for your project. (Required)',
+            validate: descriptionInput => {
+                if (descriptionInput) {
+                    return true;
+                } else {
+                    console.log('Please enter a description for your project!');
+                    return false;
+                }
+            }
+        },
+        {
+            type:
+            name:
+            message:
+        },
+        {
+            type:
+            name:
+            message:
+        },
+        {
+            type:
+            name:
+            message:
+        },
+        {
+            type:
+            name:
+            message:
+        }
+    ]);
+};
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
